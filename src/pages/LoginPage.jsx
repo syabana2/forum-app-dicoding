@@ -1,8 +1,9 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import {useNavigate, Link} from 'react-router-dom';
+import {useNavigate, Link as ReachLink} from 'react-router-dom';
 import LoginInput from '../components/LoginInput';
 import {asyncSetAuthUser} from '../states/authUser/action';
+import {Heading, Link} from '@chakra-ui/react';
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -17,10 +18,10 @@ function LoginPage() {
 
   return (
     <section className="login-page">
-      <h2>Login</h2>
+      <Heading as='h2' size='lg'>Login</Heading>
       <LoginInput login={onLogin} />
       <p className='register-info'>
-        Belum punya akun? <Link to='/register'>Daftar di sini.</Link>
+        Belum punya akun? <Link as={ReachLink} to='/register' color='teal.500'>Daftar di sini.</Link>
       </p>
     </section>
   );

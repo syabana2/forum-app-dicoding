@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import RegisterInput from '../components/RegisterInput';
 import {asyncRegisterUserAndThenLogin} from '../states/shared/action';
+import {Heading} from '@chakra-ui/react';
 
 function RegisterPage() {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function RegisterPage() {
 
   return (
     <section className="register-page">
-      <h2>Register Page</h2>
+      <Heading as='h2' size='lg'>Register Page</Heading>
       <RegisterInput register={onRegisterHandler} />
     </section>
   );

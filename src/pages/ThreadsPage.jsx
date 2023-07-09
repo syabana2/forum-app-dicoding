@@ -7,6 +7,7 @@ import {asyncUpVoteThreads, asyncDownVoteThreads} from '../states/threads/action
 import CategoriesList from '../components/CategoriesList';
 import ThreadList from '../components/ThreadList';
 import Loading from '../components/Loading';
+import {Heading} from '@chakra-ui/react';
 
 function ThreadsPage() {
   const threads = useSelector((states) => states.threads);
@@ -55,11 +56,11 @@ function ThreadsPage() {
       <Loading />
       <section className='home-page'>
         <header>
-          <p>Kategori popular</p>
+          <Heading as='h5' size='sm'>Kategori popular</Heading>
           <CategoriesList categories={categories} />
         </header>
         <div className='home-page__content'>
-          <h2>Diskusi tersedia</h2>
+          <Heading as='h2' size='lg'>Diskusi tersedia</Heading>
           <ThreadList
             threads={threadList}
             upVote={onUpVoteHandler}

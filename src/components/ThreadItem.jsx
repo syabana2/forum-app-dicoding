@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {Link as ReachLink} from 'react-router-dom';
 import {BiSolidLike, BiLike, BiSolidDislike, BiDislike} from 'react-icons/bi';
 import {BsReply} from 'react-icons/bs';
 import {alertNeedLogin, postedAt} from '../utils';
+import {Link} from '@chakra-ui/react';
 
 function ThreadItem({
   id, title, body, category, createdAt,
@@ -28,7 +29,7 @@ function ThreadItem({
       <header className='thread-item__header'>
         <span className='thread-item__category'>#{category}</span>
         <h4 className='thread-item__title'>
-          <Link to={`/threads/${id}`}>{title}</Link>
+          <Link as={ReachLink} color='blue.600' to={`/threads/${id}`}>{title}</Link>
         </h4>
       </header>
       <div className='thread-item__body' dangerouslySetInnerHTML={{__html: body}} />
