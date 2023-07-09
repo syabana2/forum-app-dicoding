@@ -38,7 +38,7 @@ function asyncRegisterUserAndThenLogin({name, email, password}) {
       response = {success: true};
     } catch (error) {
       alert(error.message);
-      response = {success: true};
+      response = {success: false};
     }
 
     dispatch(hideLoading());
